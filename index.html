@@ -1,11 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, a web developer learning HTML, CSS and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2f5fa;
+      --ink: #14213d;
+      --muted: #4d5b78;
+      --line: #c9d3e6;
+      --accent: #2547e8;
+      --accent-ink: #ffffff;
+      --mark: #ffd166;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #0f1730;
+        --ink: #eaf0ff;
+        --muted: #a5b2d0;
+        --line: #2a3760;
+        --accent: #8fa6ff;
+        --accent-ink: #0f1730;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; }
+
+    .layout { display: grid; grid-template-columns: 340px 1fr; min-height: 100vh; }
+
+    /* Sidebar: name is the memorable element */
+    aside {
+      position: sticky; top: 0; align-self: start; height: 100vh;
+      padding: 3rem 2.5rem; border-right: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .name { font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; margin: 0 0 1rem; }
+    .name span { background: linear-gradient(transparent 62%, var(--mark) 62%); }
+    .role { color: var(--muted); margin: 0 0 2rem; max-width: 24ch; }
+    nav a { display: block; padding: 0.3rem 0; color: var(--ink); text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--accent); }
+    .social a { margin-right: 1rem; font-weight: 600; }
+
+    main { padding: 3rem clamp(1.5rem, 5vw, 4.5rem); max-width: 56rem; }
+    section { padding-bottom: 3.5rem; }
+    h2 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 1rem; }
+    p { max-width: 62ch; }
+
+    /* Projects as ruled rows, not cards */
+    .project { border-top: 1px solid var(--line); padding: 1.25rem 0; }
+    .project:last-child { border-bottom: 1px solid var(--line); }
+    .project h3 { margin: 0 0 0.25rem; font-size: 1.2rem; }
+    .project p { margin: 0 0 0.5rem; color: var(--muted); }
+    .tags { font-size: 0.9rem; color: var(--muted); }
+
+    .skills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skills li { border: 1px solid var(--line); padding: 0.25rem 0.9rem; border-radius: 999px; font-weight: 600; }
+
+    form { display: grid; gap: 0.9rem; max-width: 30rem; }
+    label { font-weight: 600; display: grid; gap: 0.3rem; }
+    input, textarea {
+      font: inherit; color: inherit; background: transparent;
+      border: 1px solid var(--line); border-radius: 6px; padding: 0.6rem 0.75rem;
+    }
+    button {
+      font: inherit; font-weight: 600; cursor: pointer; justify-self: start;
+      background: var(--accent); color: var(--accent-ink);
+      border: 0; border-radius: 6px; padding: 0.65rem 1.4rem;
+    }
+
+    @media (max-width: 820px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 2rem 1.5rem; gap: 1.5rem; }
+      nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+      .social { margin-top: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
 <body>
-    Hello World
-</body>  
+  <div class="layout">
+
+    <aside>
+      <div>
+        <h1 class="name"><span>Rikunj</span> Sharma</h1>
+        <p class="role">Web developer in training. I build small, clear websites with HTML, CSS and JavaScript.</p>
+        <nav aria-label="Main">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="social">
+        <a href="https://github.com/your-username">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+      <section id="about">
+        <h2>About me</h2>
+        <p>Hi, I'm Rikunj Sharma. I'm studying IT at Delhi Technological University in Delhi. I enjoy turning ideas into working web pages and I'm learning something new every week.</p>
+        <p>Right now I'm practising HTML, CSS and JavaScript.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+          <h3>Multimedia in HTML</h3>
+          <p>A page with an audio player, a captioned figure and an embedded video.</p>
+          <div class="tags">HTML · audio · video · figure</div>
+          <a href="#">View code</a>
+        </div>
+        <div class="project">
+          <h3>iframe Website</h3>
+          <p>A site with a side menu that loads each page inside an iframe.</p>
+          <div class="tags">HTML · CSS · iframe</div>
+          <a href="#">View code</a>
+        </div>
+        <div class="project">
+          <h3>Loader Animation</h3>
+          <p>A pure CSS loading animation.</p>
+          <div class="tags">CSS · keyframes</div>
+          <a href="#">View code</a>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Git &amp; GitHub</li>
+          <li>VS Code</li>
+          <li>Responsive design</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Want to work together or just say hello? Send a message.</p>
+        <!-- Replace the address below with your email. -->
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label>Your name <input type="text" name="name" required></label>
+          <label>Your email <input type="email" name="email" required></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
+
+  </div>
+</body>
 </html>
